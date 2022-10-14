@@ -90,9 +90,28 @@ public class App {
 
         }
 
+        if (height % 2 == 1) {
+            for (int row = 0; row <= height / 2; row++) {
+                for (int rowNext = row; rowNext < height / 2; rowNext++) {
+                    System.out.print(" ");
+                }
+                for (int difference = 0 - row; difference <= row; difference++) {
+                    // c ist character
+                    System.out.print((char) (character - Math.abs(difference)));
+                }
+                System.out.println();
+            }
+            for (int row = height / 2; row > 0; row--) {
+                for (int rowNext = row; rowNext <= height / 2; rowNext++) {
+                    System.out.print(" ");
+                }
+                for (int difference = 0 - row + 1; difference < row; difference++) {
+                    System.out.print((char) (character - Math.abs(difference)));
+                }
+                System.out.println();
+            }
+        }
     }
-
-
 
     //todo Task 5
     public void marks() {
